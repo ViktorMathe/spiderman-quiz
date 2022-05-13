@@ -3,6 +3,14 @@ const questions=[
     ["Which year the first Spider-Man comic been released?", "1984", "1962", "1973", "1948"]
 ];
 
+let answers=document.getElementById('answers');
+
+let questionPool;
+let questionSet;
+let currentQuestion;
+let questionSetLength;
+
+
 function questionsOrder(){
     questionPool= questionSet.length;
     let randomNumber = Math.floor(Math.random()*questionPool);
@@ -11,7 +19,7 @@ function questionsOrder(){
 
 function htmlQuestions(){
     let questionText= document.getElementById('questions');
-    questionText.innerText=currentQuestion[0];
+    questionText.innerText =currentQuestion[0];
 
     let answer1= document.getElementById("answer1");
     answer1.innerText= currentQuestion[1];
@@ -27,3 +35,17 @@ function htmlQuestions(){
 }
 
 htmlQuestions();
+
+let questionAnswered=0;
+
+function startQuiz() {
+    clearInterval(timerFunction);
+    currentScore = 0;
+    questionsAnswered = 0;
+    pushScore();
+    pushProgress();
+    chooseQuestionSet();
+    questionOrder();
+    htmlQuestions();
+    startTimer();
+}
