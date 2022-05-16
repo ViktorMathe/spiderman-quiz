@@ -9,18 +9,18 @@
     <title>Spider-Man Quiz</title>
 </head>
 
-<body id="background">
+<body class="background" onload="startpage()">
     <header>
         <h1>Spider-Man Quiz</h1>
     </header>
-    <div class="box">
+    <div class="box" id="startpage">
         <h2>Let's choose which category you would like to try yourself</h2>
-        <button class="answers" id="startQuiz">Start</button>
+        <button class="answers" onclick="choice()" id="startQuiz">Start</button>
     </div>
 
-    <div class="box">
+    <div class="box" id="cat">
         <h2>Choose one category</h2>
-        <button class="answers">Comic book</button>
+        <button class="answers" onclick="categories()">Comic book</button>
         <button class="answers">Film</button>
         <button class="answers">Videogame</button>
     </div>
