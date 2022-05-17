@@ -6,25 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/CSS/style.css">
+    <script async src="./assets/JS/script.js"></script>
     <title>Spider-Man Quiz</title>
 </head>
 
-<body class="background" onload="startpage()">
-    <header>
+<body class="welcome">
+
+    <section id="starting" onload="welcome()">
+        <h1>Let's see what do you know about me</h1>
+        <hr>
+        <h1><span  onclick="startpage()" id="cont">Click here to continue...</span></h1>
+    </section>
+
+
+    <header class='hide'>
         <h1>Spider-Man Quiz</h1>
     </header>
-    <div class="box" id="startpage">
+    <div id="startpage"  class="background,box, hide">
         <h2>Let's choose which category you would like to try yourself</h2>
         <button class="answers" onclick="choice()" id="startQuiz">Start</button>
     </div>
 
-    <div class="box" id="cat">
+    <div class="box, hide" id="cat">
         <h2>Choose one category</h2>
         <button class="answers" onclick="categories()">Comic book</button>
         <button class="answers">Film</button>
         <button class="answers">Videogame</button>
     </div>
-    <section class="box" id="quiz">
+    <section class="box, hide" id="quiz">
 
       <div id="question"><h2>Question</h2> </div>
         <div id="answers">
@@ -37,7 +46,6 @@
     <div class="scores"></div>
     <div id="timer"></div>
     <footer></footer>
-    <script src="./assets/JS/script.js"></script>
 </body>
 
 </html>

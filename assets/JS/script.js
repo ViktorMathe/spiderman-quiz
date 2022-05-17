@@ -1,11 +1,26 @@
+let body=document.getElementsByClassName('mainpage');
 let main= document.getElementById('startpage');
 let cat= document.getElementById('cat');
 let quiz= document.getElementById('quiz');
+let welcome= document.getElementById('starting');
+let head=document.getElementsByTagName('header');
+
+document.getElementById('cont').addEventListener('click',welcome());
+
+function welcome(){
+        welcome.classList.remove('hide');
+        main.classList.add('hide');
+        head.classList.add('hide');
+        cat.classList.add('hide');
+        quiz.classList.add('hide');
+}
 
 function startpage(){
-        main.style.display='block';
-        cat.style.display='none';
-        quiz.style.display='none'
+        welcome.classList.add('hide');
+        main.classList.remove('hide');
+        head.classList.remove('hide');
+        cat.classList.add('hide');
+        quiz.classList.add('hide');
 }
 
 function choice(){
