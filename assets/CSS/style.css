@@ -3,6 +3,11 @@
     src: url(../Font-style/homoarakhn.regular.ttf)
 }
 
+body, html {
+    height: 100%;
+    display: grid;
+}
+
 .welcome {
     background: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/942d6891-f116-4a84-9c4e-cd6f2e736369/dcpnqvz-2d29d21a-4cbf-4e9e-8214-24183b45cd15.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzk0MmQ2ODkxLWYxMTYtNGE4NC05YzRlLWNkNmYyZTczNjM2OVwvZGNwbnF2ei0yZDI5ZDIxYS00Y2JmLTRlOWUtODIxNC0yNDE4M2I0NWNkMTUucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.uBlCPfGnjbFg5LKbg3auyL3NnGNc01obaH6XPJLddGI)no-repeat, center;
     background-size: cover;
@@ -37,6 +42,7 @@ hr {
 .background {
     background: url(../images/Spiderman.Wallpaper.Op05.jpg)no-repeat, center;
     background-size: cover;
+    height: 100%;
 }
 
 h1 {
@@ -78,7 +84,7 @@ h2 {
 
 }
 
-.answers {
+.bttn {
     display: flex;
     text-align: center;
     align-items: center;

@@ -9,9 +9,9 @@
     <title>Spider-Man Quiz</title>
 </head>
 
-<body class="welcome">
+<body id="body" class="welcome">
 
-    <section id="starting" onload="welcome()" onclick="startpage()">
+    <section id="starting" class="hide"  onclick="startpage()">
         <h1>Let's see what do you know about me</h1>
         <hr>
         <h1><span id="cont">Click to continue...</span></h1>
@@ -21,29 +21,29 @@
     <header>
         <h1>Spider-Man Quiz</h1>
     </header>
-    <div  class="box">
+    <div  class="box hide" id="startq">
         <h2>Let's choose which category you would like to try yourself</h2>
-        <button class="answers" onclick="choice()" id="startQuiz">Start</button>
+        <button class="bttn" onclick="choice()" id="startQuiz">Start</button>
     </div>
 
     <div class="box" id="cat">
         <h2>Choose one category</h2>
-        <button class="answers" onclick="categories()">Comic book</button>
-        <button class="answers">Film</button>
-        <button class="answers">Videogame</button>
+        <button class="bttn" onclick="categories()">Comic book</button>
+        <button class="bttn">Film</button>
+        <button class="bttn">Videogame</button>
     </div>
-    <section class="box" id="quiz">
+    <div class="box" id="quiz">
 
         <div id="question">
             <h2>Question</h2>
         </div>
         <div id="answers">
-            <button class="answers" id="answer1">Answer 1</button>
-            <button class="answers" id="answer2">Answer2</button>
-            <button class="answers" id="answer3">Answer 3</button>
-            <button class="answers" id="answer4">Answer 4</button>
+            <button data-answer="answer" class="bttn" id="answer1">Answer 1</button>
+            <button data-answer="answer" class="bttn" id="answer2">Answer2</button>
+            <button data-answer="answer" class="bttn" id="answer3">Answer 3</button>
+            <button data-answer="answer" class="bttn" id="answer4">Answer 4</button>
         </div>
-    </section>
+    </div>
     <div class="scores"></div>
     <div id="timer"></div>
 </section>
