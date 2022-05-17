@@ -27,8 +27,13 @@ function categories() {
     quiz.style.display = 'block';
 }
 
+function startquiz(){
 
+}
 
+function questionset(){
+
+}
 
 let questions = [{
 
@@ -51,3 +56,11 @@ let questions = [{
         }
     ]
 }]
+
+function checkanswers(){
+
+}
+
+function gameover(){
+    
+}
