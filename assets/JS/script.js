@@ -21,46 +21,75 @@ function choice() {
     cat.style.display = 'block';
 }
 
-function categories() {
+function categories(cats) {
     main.classList.remove('hide');
     cat.style.display = "none";
     quiz.style.display = 'block';
+
+    catchoice = cats;
+    answers.classList.add(`${cats}`);
+
+    startquiz();
 }
 
-function startquiz(){
-
-}
-
-function questionset(){
-
-}
-
-let questions = [{
-
-    question: "When was the first Spider-Man comic released?",
-    answer: [{
-            text: "1962",
-            isCorrect: true
-        },
-        {
-            text: "1958",
-            isCorrect: false
-        },
-        {
-            text: "1948",
-            isCorrect: false
-        },
-        {
-            text: "1973",
-            isCorrect: false
-        }
+let questions = [
+    [
+    [ "When was the first Spider-Man comic released?", "1962", "1958", "1948","1973"],
+    [ "Who wrote the most Spider-Man comics?","Steve Ditko", "Kaare Andrews", "Stan Lee", "Gerard Way" ],
+    [ "Who was Spider-Man's stronget enemy?", "Rhino", "Sandman", "Venom", "Doctor Octopus"],
+    ],
+    [
+        ["What?", "nothing", "not much", "no" , "nien"]
     ]
-}]
+];
 
-function checkanswers(){
+
+
+function choosequestions() {
+    let fullQuestions = JSON.parse(JSON.stringify(questions));
+    if (catchoice === 'comic') {
+        questionsSet = fullQuestions[0];
+    } else {
+        alert("That's not a valid category. Choose another one!");
+    }
+    questionsSetlength = questionsSet.length;
+}
+
+function randomquestions(){
+    questionPool = questionsSet.length;
+    let randomNumber = Math.floor(Math.random() * questionPool);
+    currentQuestion = questionsSet[`${randomNumber}`];
+}
+
+function showquestions() {
+
+    let questiontext = document.getElementById('question');
+    questiontext.innerText = currentQuestion[0];
+
+    let answerone = document.getElementById('answer1');
+    answerone.innerText = currentQuestion[1];
+
+    let answertwo = document.getElementById('answer2');
+    answertwo.innerText = currentQuestion[2];
+
+    let answerthree = document.getElementById('answer2');
+    answerthree.innerText = currentQuestion[3];
+
+    let answerfour = document.getElementById('answer2');
+    answerfour.innerText = currentQuestion[4];
+}
+
+
+function startquiz() {
+        randomquestions();
+        choosequestions();
+        showquestions();
+    }
+
+function checkanswers() {
 
 }
 
-function gameover(){
-    
+function gameover() {
+
 }

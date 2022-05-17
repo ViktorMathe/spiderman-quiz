@@ -28,14 +28,14 @@
 
     <div class="box" id="cat">
         <h2>Choose one category</h2>
-        <button class="bttn" onclick="categories()">Comic book</button>
-        <button class="bttn">Film</button>
-        <button class="bttn">Videogame</button>
+        <button class="bttn" onclick="categories('comic')">Comic book</button>
+        <button class="bttn" onclick="categories('film')">Film</button>
+        <button class="bttn" onclick="categories('game')">Videogame</button>
     </div>
     <div class="box" id="quiz">
 
-        <div id="question">
-            <h2>Question</h2>
+        <div>
+            <h2 id="question">Question</h2>
         </div>
         <div id="answers">
             <button data-answer="answer" class="bttn" id="answer1">Answer 1</button>
