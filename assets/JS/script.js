@@ -74,7 +74,7 @@ function nextquestion(){
 function showquestions(questions) {
 
   const questiontext = document.getElementById('question');
-  questiontext.innerText = questions.question;
+  questiontext.innerText = questions[0].question;
 
 }
 
