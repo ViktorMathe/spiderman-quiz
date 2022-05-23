@@ -4,6 +4,7 @@ let startq = document.getElementById('startq')
 let cat = document.getElementById('cat');
 let quiz = document.getElementById('quiz');
 let welcome = document.getElementById('starting');
+let scorenumbers= document.getElementById('scores');
 
 welcome.classList.remove('hide');
 
@@ -47,6 +48,8 @@ let questions = [
     ["Who wrote the most Spider-Man comics?", "Steve Ditko", "Kaare Andrews", "Stan Lee", "Gerard Way", "Stan Lee"],
 
     ["Who was Spider-Man's stronget enemy?", "Rhino", "Sandman", "Venom", "Doctor Octopus", "Rhino"],
+
+    ["Which is a most popular superhero?", "Iron-Man", "Captain America", "Hulk", "Spider-Man", "Spider-Man"],
   ],
   [
     ['Which film was starred by Tom Holland?', 'Spider-Man', 'The Amazing Spider-Man', 'Spider-Man 3', 'Spider-Man Homecoming', 'Spider-Man Homecoming'],
@@ -106,12 +109,12 @@ function showquestions(questions) {
 
 function nextquestion() {
   console.log('Next question');
-  if (qanswered < questionsSet.length) {
+  if( qanswered < questionPool) {
     questionPool--;
     removeAnsweredQ();
     randomquestions();
     showquestions();
-  } else if (qanswered === questionsSet.length) {
+  } else if (qanswered === questionPool) {
     gameover();
   } else {
     alert('There was a problem! Please start again');
@@ -124,7 +127,7 @@ function nextquestion() {
 function removeAnsweredQ() {
   console.log('Remove answered question');
   let questionshown = questionsSet.indexOf(currentQuestion);
-  questionsSet.splice(questionshown, 1);
+  questionsSet.splice(questionshown,1);
 }
 
 
@@ -133,22 +136,26 @@ function startquiz() {
   randomquestions();
   showquestions();
   qanswered=0;
+  scores=0;
 }
 
 function checkanswers(num) {
   console.log('Check answer');
   if (currentQuestion[num] == currentQuestion[5]) {
+    console.log('Correct Answer');
     qanswered++;
     scores++;
-    /*scores(); */
+    scorepush(); 
   } else {
+    console.log('Wrong Answer');
     qanswered++;
   }
+  removeAnsweredQ();
   nextquestion();
 }
 
-function scores(){
-  scores=0;
+function scorepush(){
+  scorenumbers.innerText=`${scores}`;
 }
 
 function gameover() {
