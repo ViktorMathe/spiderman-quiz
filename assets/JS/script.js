@@ -4,7 +4,8 @@ let startq = document.getElementById('startq')
 let cat = document.getElementById('cat');
 let quiz = document.getElementById('quiz');
 let welcome = document.getElementById('starting');
-let scorenumbers= document.getElementById('scores');
+let scorenumbers = document.getElementById('scores');
+let scorepage = document.getElementById('score-page');
 
 welcome.classList.remove('hide');
 
@@ -22,18 +23,21 @@ function startpage() {
   main.classList.remove('hide');
   cat.style.display = 'none';
   quiz.style.display = 'none';
+  scorepage.style.display = 'none';
 }
 
 function choice() {
   console.log('Category choices')
   main.classList.remove('hide');
   startq.style.display = 'none';
+  scorepage.style.display = 'none';
   cat.style.display = 'block';
 }
 
 function categories(cats) {
   main.classList.remove('hide');
   cat.style.display = "none";
+  scorepage.style.display = 'none';
   quiz.style.display = 'block';
 
   catchoice = cats;
@@ -109,9 +113,8 @@ function showquestions(questions) {
 
 function nextquestion() {
   console.log('Next question');
-  if( qanswered < questionPool) {
+  if (qanswered < questionPool) {
     questionPool--;
-    removeAnsweredQ();
     randomquestions();
     showquestions();
   } else if (qanswered === questionPool) {
@@ -126,17 +129,18 @@ function nextquestion() {
 
 function removeAnsweredQ() {
   console.log('Remove answered question');
-  let questionshown = questionsSet.indexOf(currentQuestion);
-  questionsSet.splice(questionshown,1);
+  let questionshown = questionsSet.currentQuestion;
+  questionsSet.splice(questionshown, 0);
 }
 
 
 function startquiz() {
+  console.log('Game started');
   choosecat();
   randomquestions();
   showquestions();
-  qanswered=0;
-  scores=0;
+  qanswered = 0;
+  scores = 0;
 }
 
 function checkanswers(num) {
@@ -145,19 +149,30 @@ function checkanswers(num) {
     console.log('Correct Answer');
     qanswered++;
     scores++;
-    scorepush(); 
+    scorepush();
   } else {
     console.log('Wrong Answer');
     qanswered++;
   }
   removeAnsweredQ();
+
   nextquestion();
 }
 
-function scorepush(){
-  scorenumbers.innerText=`${scores}`;
+function scorepush() {
+  scorenumbers.innerText = `${scores}`;
 }
 
 function gameover() {
+  console.log('Finished the game');
+  endscore();
   questionsSet = 0;
+}
+
+function endscore() {
+  console.log('Shows the results');
+  main.classList.remove('hide');
+  cat.style.display = "none";
+  quiz.style.display = 'none';
+  scorepage.style.display = 'block';
 }
