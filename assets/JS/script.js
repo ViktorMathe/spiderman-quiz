@@ -6,7 +6,7 @@ let quiz = document.getElementById('quiz');
 let welcome = document.getElementById('starting');
 let scorenumbers = document.getElementById('scores');
 let scorepage = document.getElementById('score-page');
-
+let timer=document.getElementById('timer');
 welcome.classList.remove('hide');
 
 let currentQuestion;
@@ -14,7 +14,7 @@ let randomQuestions;
 let questionsSet;
 let questionPool;
 let qanswered;
-
+let counter;
 
 function startpage() {
   console.log('Start page')
@@ -153,8 +153,22 @@ function startquiz() {
   choosecat();
   randomquestions();
   showquestions();
+  starttimer();
+  clearInterval(countdown);
   qanswered = 0;
   scores = 0;
+}
+function starttimer(){
+  timer.innerText = '60 seconds';
+  seconds = 60 ;
+  counter= setInterval(countdown, 1000);
+}
+function countdown(){
+  seconds--;
+  timer.innerText= `${seconds} seconds`;
+  if(seconds===0){
+    endtimer();
+  }
 }
 
 function checkanswers(num) {
@@ -174,7 +188,7 @@ function checkanswers(num) {
 }
 
 function scorepush() {
-  scorenumbers.innerText = `${scores}`;
+  scorenumbers.innerText = `${scores}/5`;
 }
 
 function gameover() {
