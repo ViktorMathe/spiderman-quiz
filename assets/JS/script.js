@@ -11,7 +11,7 @@ let currentQuestion;
 let randomQuestions;
 let questionsSet;
 let questionPool;
-let qanswered = 0;
+let qanswered;
 
 
 function startpage() {
@@ -132,20 +132,23 @@ function startquiz() {
   choosecat();
   randomquestions();
   showquestions();
-  checkanswers();
-  nextquestion();
+  qanswered=0;
 }
 
 function checkanswers(num) {
   console.log('Check answer');
-  if (currentQuestion[num] === currentQuestion[5]) {
+  if (currentQuestion[num] == currentQuestion[5]) {
     qanswered++;
-    score++;
-    scores();
+    scores++;
+    /*scores(); */
   } else {
     qanswered++;
   }
   nextquestion();
+}
+
+function scores(){
+  scores=0;
 }
 
 function gameover() {
