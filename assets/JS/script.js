@@ -54,6 +54,8 @@ let questions = [
     ["Who was Spider-Man's stronget enemy?", "Rhino", "Sandman", "Venom", "Doctor Octopus", "Rhino"],
 
     ["Which is a most popular superhero?", "Iron-Man", "Captain America", "Hulk", "Spider-Man", "Spider-Man"],
+
+    ["What is NOT Peter Parker special ability?", "Enhanced strength", "Reflexes", "Durability", "Flying", "Flying"]
   ],
   [
     ['Which film was starred by Tom Holland?', 'Spider-Man', 'The Amazing Spider-Man', 'Spider-Man 3', 'Spider-Man Homecoming', 'Spider-Man Homecoming'],
@@ -62,9 +64,21 @@ let questions = [
 
     ['Who was the villain in the Amazing Spider-Man 2?', 'Lizard', 'Green Goblin and Electro', 'Doctor Octopus', 'Sandman and Venom', "Green Goblin and Electro"],
 
+    ['How many times MJ been captured by a villain?', '4', '3', 'None', '6', '4'],
+
+    ['What is MJ full name in the Tom Holland films?', 'Mary-Jane Wattson', 'Michelle Jones-Wattson', 'Michelle-Jane Wattson', 'None of these', 'Michelle Jones-Wattson'],
+
   ],
   [
-    ['What?', 'nothing', 'something', ]
+    ['How many Spider-Man game been released from 2000?', '32', '20','4','67', '20' ],
+
+    ['Which console exclusive the most famous Spider-Man game?', 'Microsoft XBOX', 'Nintendo', 'PC', 'PlayStation', 'PlayStation'],
+
+    ['How old is Peter Parker in the Spider-Man (2018) video game?', '16', '29', '23', '33', '23'],
+
+    ['Which else character can you control in the Spider-Man (2018) video game?', 'Aunt May', 'Uncle Ben', 'Otto Octavius', 'MJ', 'MJ'],
+
+    ['Which game has apperance of Spider-Man?', 'Fortnite', 'Call of Duty', 'Battlefield', 'Minecraft', 'Fortnite'],
   ]
 
 ];
