@@ -1,5 +1,5 @@
 @font-face {
-    font-family: homoarakhn;
+    font-family: spidey;
     src: url(../Font-style/homoarakhn.regular.ttf)
 }
 
@@ -47,7 +47,7 @@ hr {
 
 h1 {
     text-align: center;
-    font-family: homoarakhn;
+    font-family: spidey;
     font-weight: 600;
     font-size: 300%;
 }
@@ -102,4 +102,14 @@ h2 {
     font-weight: 300;
     font-size: large;
 
+}
+
+#scores, #timer {
+    text-align: center;
+    color: #ffff;
+    background-color: red;
+    font-size: 120%;
+}
+#scores span, #timer span{
+    font-family: spidey;
 }

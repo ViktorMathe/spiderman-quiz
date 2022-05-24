@@ -165,10 +165,15 @@ function starttimer(){
 }
 function countdown(){
   seconds--;
-  timer.innerText= `${seconds} seconds`;
+  timer.innerText= `Time left: ${seconds} seconds`;
   if(seconds===0){
     endtimer();
   }
+}
+
+function endtimer(){
+  alert('You are out of time!');
+  gameover();
 }
 
 function checkanswers(num) {
@@ -188,11 +193,12 @@ function checkanswers(num) {
 }
 
 function scorepush() {
-  scorenumbers.innerText = `${scores}/5`;
+  scorenumbers.innerText = `Score: ${scores}/5`;
 }
 
 function gameover() {
   console.log('Finished the game');
+  clearInterval(counter);
   endscore();
   questionsSet = 0;
 }
