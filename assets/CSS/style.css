@@ -113,3 +113,24 @@ h2 {
 #scores span, #timer span{
     font-family: spidey;
 }
+
+.result-box {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: 650px;
+    background-color: RGB(43, 55, 132, 0.6);
+    border-radius: 25px;
+    padding: 15px;
+}
+
+.nav-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-buttons > button{
+    margin: 20px;
+}

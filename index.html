@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/4854b264bc.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/CSS/style.css">
     <title>Spider-Man Quiz</title>
 </head>
@@ -20,6 +21,10 @@
     <section class="background hide" id="startpage">
     <header>
         <h1>Spider-Man Quiz</h1>
+        <div class="nav-buttons">
+        <button id="home-button" onclick="startpage()"><i class="fas fa-spider"></i><br>Home</button>
+        <button id="music-button"><i class="fas fa-music"></i><br>Music on</button>
+        </div>
     </header>
     <div  class="box hide" id="startq">
         <h2>Let's choose which category you would like to try yourself</h2>
@@ -47,7 +52,7 @@
     <div id="scores"><span>Score:</span> 0/5</div>
     <div id="timer"><span>Time left:</span> 60 <span>seconds</span></div>
 
-    <div class="box" id="score-page">
+    <div class="result-box" id="score-page">
         <div></div>
     </div>
 </section>
