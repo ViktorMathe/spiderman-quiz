@@ -12,50 +12,52 @@
 
 <body id="body" class="welcome">
 
-    <section id="starting" class="hide"  onclick="startpage()">
+    <section id="starting" class="hide" >
         <h1>Let's see what do you know about me</h1>
         <hr>
         <h1><span id="cont">Click to continue...</span></h1>
     </section>
 
     <section class="background hide" id="startpage">
-    <header>
-        <h1>Spider-Man Quiz</h1>
-        <div class="nav-buttons">
-        <button id="home-button" onclick="startpage()"><i class="fas fa-spider"></i><br>Home</button>
-        <button id="music-button"><i class="fas fa-music"></i><br>Music on</button>
+        <header>
+            <h1>Spider-Man Quiz</h1>
+            <div class="nav-buttons">
+                <button id="home-button"><i class="fas fa-spider"></i><br>Home</button>
+                <button id="music-button"><i class="fas fa-music"></i><br>Music on</button>
+            </div>
+        </header>
+        <div class="box hide" id="startq">
+            <h2>Let's choose which category you would like to try yourself</h2>
+            <button class="bttn"  id="startQuiz">Start</button>
         </div>
-    </header>
-    <div  class="box hide" id="startq">
-        <h2>Let's choose which category you would like to try yourself</h2>
-        <button class="bttn" onclick="choice()" id="startQuiz">Start</button>
-    </div>
 
-    <div class="box" id="cat">
-        <h2>Choose one category</h2>
-        <button class="bttn" onclick="categories('comic')">Comic book</button>
-        <button class="bttn" onclick="categories('film')">Film</button>
-        <button class="bttn" onclick="categories('game')">Videogame</button>
-    </div>
-    <div class="box" id="quiz">
-
-        <div>
-            <h2 id="question">Question</h2>
+        <div class="box" id="cat">
+            <h2>Choose one category</h2>
+            <button class="bttn" onclick="categories('comic')">Comic book</button>
+            <button class="bttn" onclick="categories('film')">Film</button>
+            <button class="bttn" onclick="categories('game')">Videogame</button>
         </div>
-        <div id="answers">
-            <button data-answer="answer" class="bttn" id="answer1" onclick="checkanswers(1)">Answer 1</button>
-            <button data-answer="answer" class="bttn" id="answer2" onclick="checkanswers(2)">Answer2</button>
-            <button data-answer="answer" class="bttn" id="answer3" onclick="checkanswers(3)">Answer 3</button>
-            <button data-answer="answer" class="bttn" id="answer4" onclick="checkanswers(4)">Answer 4</button>
-        </div>
-    </div>
-    <div id="scores"><span>Score:</span> 0/5</div>
-    <div id="timer"><span>Time left:</span> 60 <span>seconds</span></div>
+        <div class="box" id="quiz">
 
-    <div class="result-box" id="score-page">
-        <div></div>
-    </div>
-</section>
+            <div>
+                <h2 id="question">Question</h2>
+            </div>
+            <div id="answers">
+                <button data-answer="answer" class="bttn" id="answer1">Answer 1</button>
+                <button data-answer="answer" class="bttn" id="answer2">Answer2</button>
+                <button data-answer="answer" class="bttn" id="answer3">Answer 3</button>
+                <button data-answer="answer" class="bttn" id="answer4">Answer 4</button>
+            </div>
+        </div>
+        <div id="scores"><span>Score:</span> 0/5</div>
+        <div id="timer"><span>Time left:</span> 60 <span>seconds</span></div>
+
+        <div class="result-box" id="score-page">
+            <div>
+                <h2 id="end-result">Your result:</h2>
+            </div>
+        </div>
+    </section>
     <footer></footer>
     <script src="./assets/JS/script.js"></script>
 </body>

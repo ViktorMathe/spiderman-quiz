@@ -125,6 +125,10 @@ h2 {
     padding: 15px;
 }
 
+.result-box h2 {
+    color:red;
+}
+
 .nav-buttons{
     display: flex;
     align-items: center;
