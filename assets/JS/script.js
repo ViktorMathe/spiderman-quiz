@@ -233,6 +233,7 @@ let questions = [
 function randomquestions() {
   let randomQuestion = Math.floor(Math.random() * questionsSet.length);
   currentQuestion = questionsSet[`${randomQuestion}`];
+  questionsSet.splice(randomQuestion, 1);
 }
 
 function showquestions() {
@@ -254,8 +255,8 @@ function showquestions() {
 }
 
 function checkanswers(event) {
-  console.log('Check answer');
-  if (this.dataset.answer = currentQuestion.correctanswer) {
+  console.log(event);
+  if (event.target.innerHTML === currentQuestion.correctanswer) {
     console.log('Correct Answer');
     questionAnswered++;
     scores++;
@@ -270,24 +271,22 @@ function checkanswers(event) {
 
 function nextquestion() {
   console.log('Next question');
-  if (questionAnswered < questionsSet.length) {
-    removeAnsweredQ();
+  if (questionsSet.length > 0) {
+    //removeAnsweredQ();
     randomquestions();
     showquestions();
-  } else if (questionAnswered === questionsSet.length) {
+  } else if (questionsSet.length === 0) {
     gameover();
   } else {
     alert('There was a problem! Please start again');
   }
-
-
 }
 
-function removeAnsweredQ() {
+/**function removeAnsweredQ() {
   console.log('Remove answered question');
   let questionshown = questionsSet.indexOf(currentQuestion);
   questionsSet.splice(questionshown, 1);
-}
+}*/
 
 
 
@@ -309,7 +308,6 @@ function endtimer() {
   alert('You are out of time!');
   gameover();
 }
-
 
 function scorepush() {
   scorenumbers.innerHTML = `Score: ${scores}/5`;
@@ -334,7 +332,7 @@ function endscore() {
 }
 
 
-welcome.addEventListener("click",startpage);
+welcome.addEventListener("click", startpage);
 document.getElementById('home-button').addEventListener('click', startpage);
 startq.addEventListener('click', choice);
-document.getElementById('answers').addEventListener('click',checkanswers);
+document.getElementById('answers').addEventListener('click', checkanswers);
