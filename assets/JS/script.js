@@ -99,100 +99,96 @@ let questions = [
   ],
 
   [{
-      "question": 'Which film starred Tom Holland?',
-      "answerone": 'Spider-Man',
-      "answertwo": 'The Amazing Spider-Man',
-      "answerthree": 'Spider-Man 3',
-      "answerfour": 'Spider-Man Homecoming',
-      "correctanswer": 'Spider-Man Homecoming'
+      "question": "Which film starred Tom Holland?",
+      "answerone": "Spider-Man",
+      "answertwo": "The Amazing Spider-Man",
+      "answerthree": "Spider-Man 3",
+      "answerfour": "Spider-Man Homecoming",
+      "correctanswer": "Spider-Man Homecoming"
     },
 
     {
-      "question": 'When was the fist Spider-Man movie released in the cinema?',
-      "answerone": '2012',
-      "answertwo": '2002',
-      "answerthree": '2004',
-      "answerfour": '2017',
-      "correctanswer": '2002'
+      "question": "When was the fist Spider-Man movie released in the cinema?",
+      "answerone": "2012",
+      "answertwo": "2002",
+      "answerthree": "2004",
+      "answerfour": "2017",
+      "correctanswer": "2002"
     },
 
     {
-      "question": 'Who was the villain in the Amazing Spider-Man 2?',
-      "answerone": 'Lizard',
-      "answertwo": 'Green Goblin and Electro',
-      "answerthree": 'Doctor Octopus',
-      "answerfour": 'Sandman and Venom',
+      "question": "Who was the villain in the Amazing Spider-Man 2?",
+      "answerone": "Lizard",
+      "answertwo": "Green Goblin and Electro",
+      "answerthree": "Doctor Octopus",
+      "answerfour": "Sandman and Venom",
       "correctanswer": "Green Goblin and Electro"
     },
 
     {
-      "question": 'How many times has MJ been captured by a villain?',
-      "answerone": '4',
-      "answertwo": '3',
-      "answerthree": 'None',
-      "answerfour": '6',
-      "correctanswer": '4'
+      "question": "How many times has MJ been captured by a villain?",
+      "answerone": "4",
+      "answertwo": "3",
+      "answerthree": "None",
+      "answerfour": "6",
+      "correctanswer": "4"
     },
 
     {
       "question": "What is MJ's full name in the films that Tom Holland starred in?",
-      "answerone": 'Mary-Jane Wattson',
-      "answertwo": 'Michelle Jones-Wattson',
-      "answerthree": 'Michelle-Jane Wattson',
-      "answerfour": 'None of these',
-      "correctanswer": 'Michelle Jones-Wattson'
+      "answerone": "Mary-Jane Wattson",
+      "answertwo": "Michelle Jones-Wattson",
+      "answerthree": "Michelle-Jane Wattson",
+      "answerfour": "None of these",
+      "correctanswer": "Michelle Jones-Wattson"
     }
   ],
 
 
   [{
-      "question": 'How many Spider-Man games have been released since 2000?',
-      "answerone": '32',
-      "answertwo": '20',
-      "answerthree": '4',
-      "answerfour": '67',
-      "correctanswer": '20'
+      "question": "How many Spider-Man games have been released since 2000?",
+      "answerone": "32",
+      "answertwo": "20",
+      "answerthree": "4",
+      "answerfour": "67",
+      "correctanswer": "20"
     },
 
     {
-      "question": 'Which console has the exclusive right to the most famous Spider-Man game?',
-      "answerone": 'Microsoft XBOX',
-      "answertwo": 'Nintendo',
-      "answerthree": 'PC',
-      "answerfour": 'PlayStation',
-      "correctanswer": 'PlayStation'
+      "question": "Which platform has the exclusive right to the most famous Spider-Man game?",
+      "answerone": "Microsoft XBOX",
+      "answertwo": "Nintendo",
+      "answerthree": "PC",
+      "answerfour": "PlayStation",
+      "correctanswer": "PlayStation"
     },
 
     {
-      "question": 'How old is Peter Parker in Spider-Man (2018) video game?',
-      "answerone": '16',
-      "answertwo": '29',
-      "answerthree": '23',
-      "answerfour": '33',
-      "correctanswer": '23'
+      "question": "How old is Peter Parker in Spider-Man (2018) video game?",
+      "answerone": "16",
+      "answertwo": "29",
+      "answerthree": "23",
+      "answerfour": "33",
+      "correctanswer": "23"
     },
 
     {
-      "question": 'What character can you control in the Spider-Man (2018) video game?',
-      "answerone": 'Aunt May',
-      "answertwo": 'Uncle Ben',
-      "answerthree": 'Otto Octavius',
-      "answerfour": 'MJ',
-      "correctanswer": 'MJ'
+      "question": "What character can you control in the Spider-Man (2018) video game?",
+      "answerone": "Aunt May",
+      "answertwo": "Uncle Ben",
+      "answerthree": "Otto Octavius",
+      "answerfour": "MJ",
+      "correctanswer": "MJ"
     },
 
     {
-      "question": 'Which game has Spider-Man appeared in?',
-      "answerone": 'Fortnite',
-      "answertwo": 'Call of Duty',
-      "answerthree": 'Battlefield',
-      "answerfour": 'Minecraft',
-      "correctanswer": 'Fortnite'
-    }
-  ],
-];
-
-const questionReset = JSON.parse(JSON.stringify(questions));
+      "question": "Which game has Spider-Man appeared in?",
+      "answerone": "Fortnite",
+      "answertwo": "Call of Duty",
+      "answerthree": "Battlefield",
+      "answerfour": "Minecraft",
+      "correctanswer": "Fortnite"
+    }]]
 
 function startquiz(event) {
   console.log('Game started');
@@ -206,7 +202,7 @@ function startquiz(event) {
 
 function choosecat(event) {
   console.log("Category choosen");
-  questionList = [...questions];
+  questionList = JSON.parse(JSON.stringify(questions));
   switch (categoryChoosen) {
 
     case "comic":
@@ -263,8 +259,7 @@ function checkanswers(event) {
 
 function removeAnsweredQuestion() {
   let questionIndex = questionsSet.indexOf(currentQuestion);
-  questionsSet.splice(questionIndex, +1)
-  // console.log(removedQuestion.values);
+  questionsSet.splice(questionIndex, 1)
 }
 
 function nextquestion() {
@@ -326,7 +321,6 @@ function resetting() {
   scorenumbers.innerHTML = `Score: 0/5`;
   questionAnswered = 0;
   questionIndex = 0;
-  questions = questionReset;
   console.log(questions)
   scores = 0;
 }
