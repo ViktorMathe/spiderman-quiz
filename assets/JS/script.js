@@ -10,23 +10,11 @@ let timer = document.getElementById('timer');
 let endresult = document.getElementById('end-result');
 welcome.classList.remove('hide');
 
-let questionAnswered;
+let scores = 0;
 let questionsSet;
 let categoryChoosen;
 let currentQuestion;
 let counter;
-
-
-function reset() {
-  cat.style.display = 'none';
-  quiz.style.display = 'none';
-  scorepage.style.display = 'none';
-  scorenumbers.style.display = 'none';
-  timer.style.display = 'none';
-  clearInterval(counter);
-  seconds = 60;
-  scores = 0;
-}
 
 function startpage(event) {
   console.log('Start page')
@@ -34,7 +22,12 @@ function startpage(event) {
   body.classList.remove('welcome');
   main.classList.remove('hide');
   startq.style.display = 'block';
-  reset();
+  cat.style.display = 'none';
+  quiz.style.display = 'none';
+  scorepage.style.display = 'none';
+  scorenumbers.style.display = 'none';
+  timer.style.display = 'none';
+
 }
 
 function choice(event) {
@@ -57,36 +50,6 @@ function categories(category) {
 
   startquiz();
 }
-
-function startquiz(event) {
-  console.log('Game started');
-  questionAnswered = 0;
-  choosecat();
-  randomquestions();
-  showquestions();
-  starttimer();
-  clearInterval(countdown);
-}
-
-function choosecat(event) {
-  console.log("Category choosen");
-  const questionList = [...questions];
-  switch (categoryChoosen) {
-
-    case "comic":
-      questionsSet = questionList[0];
-      break;
-    case "film":
-      questionsSet = questionList[1];
-      break;
-    case "game":
-      questionsSet = questionList[2];
-      break;
-    default:
-      alert("No valid category been chosen");
-  }
-}
-
 
 let questions = [
   [{
@@ -229,11 +192,42 @@ let questions = [
   ],
 ];
 
+const questionReset = JSON.parse(JSON.stringify(questions));
+
+function startquiz(event) {
+  console.log('Game started');
+  choosecat();
+  resetting();
+  randomquestions();
+  showquestions();
+  starttimer();
+  clearInterval(countdown);
+}
+
+function choosecat(event) {
+  console.log("Category choosen");
+  questionList = [...questions];
+  switch (categoryChoosen) {
+
+    case "comic":
+      questionsSet = questionList[0];
+      break;
+    case "film":
+      questionsSet = questionList[1];
+      break;
+    case "game":
+      questionsSet = questionList[2];
+      break;
+    default:
+      alert("No valid category been chosen");
+  }
+
+
+}
 
 function randomquestions() {
   let randomQuestion = Math.floor(Math.random() * questionsSet.length);
   currentQuestion = questionsSet[`${randomQuestion}`];
-  questionsSet.splice(randomQuestion, 1);
 }
 
 function showquestions() {
@@ -258,36 +252,32 @@ function checkanswers(event) {
   console.log(event);
   if (event.target.innerHTML === currentQuestion.correctanswer) {
     console.log('Correct Answer');
-    questionAnswered++;
     scores++;
     scorepush();
   } else {
     console.log('Wrong Answer');
-    questionAnswered++;
   }
-
+  removeAnsweredQuestion();
   nextquestion();
+}
+
+function removeAnsweredQuestion() {
+  let questionIndex = questionsSet.indexOf(currentQuestion);
+  questionsSet.splice(questionIndex, +1)
+  // console.log(removedQuestion.values);
 }
 
 function nextquestion() {
   console.log('Next question');
-  if (questionsSet.length > 0) {
-    //removeAnsweredQ();
+  if (questionAnswered < questionsSet.length) {
     randomquestions();
     showquestions();
-  } else if (questionsSet.length === 0) {
+  } else if (questionsSet.length == questionAnswered) {
     gameover();
   } else {
     alert('There was a problem! Please start again');
   }
 }
-
-/**function removeAnsweredQ() {
-  console.log('Remove answered question');
-  let questionshown = questionsSet.indexOf(currentQuestion);
-  questionsSet.splice(questionshown, 1);
-}*/
-
 
 
 function starttimer() {
@@ -317,7 +307,6 @@ function gameover() {
   console.log('Finished the game');
   clearInterval(counter);
   endscore();
-  questionsSet = 0;
 }
 
 function endscore() {
@@ -331,8 +320,21 @@ function endscore() {
   endresult.innerText = `Your result: ${scores}/5`;
 }
 
+function resetting() {
+  clearInterval(countdown);
+  seconds = 60;
+  scorenumbers.innerHTML = `Score: 0/5`;
+  questionAnswered = 0;
+  questionIndex = 0;
+  questions = questionReset;
+  console.log(questions)
+  scores = 0;
+}
+
+
 
 welcome.addEventListener("click", startpage);
-document.getElementById('home-button').addEventListener('click', startpage);
 startq.addEventListener('click', choice);
+var resetGame = document.getElementById('home-button');
+resetGame.addEventListener('click',startpage);
 document.getElementById('answers').addEventListener('click', checkanswers);
