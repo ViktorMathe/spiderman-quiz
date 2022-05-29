@@ -15,6 +15,8 @@ let questionsSet;
 let categoryChoosen;
 let currentQuestion;
 let counter;
+let music = "off";
+const spidermanAudio = new Audio('assets/Music/main-music.mp3');
 
 function startpage(event) {
   console.log('Start page')
@@ -27,7 +29,6 @@ function startpage(event) {
   scorepage.style.display = 'none';
   scorenumbers.style.display = 'none';
   timer.style.display = 'none';
-
 }
 
 function choice(event) {
@@ -188,7 +189,9 @@ let questions = [
       "answerthree": "Battlefield",
       "answerfour": "Minecraft",
       "correctanswer": "Fortnite"
-    }]]
+    }
+  ]
+]
 
 function startquiz(event) {
   console.log('Game started');
@@ -325,10 +328,37 @@ function resetting() {
   scores = 0;
 }
 
+function musicbutton() {
+  if (music === "on") {
+    document.getElementById('music-button').innerHTML = `<i class="fas fa-music-slash"></i><br>Music off`;
+  } else {
+    document.getElementById('music-button').innerHTML = `<i class="fas fa-music"></i><br>Music on`;
+  }
+}
+
+spidermanAudio.loop = true;
+
+function playmusic(){
+  if(music==="on"){
+    spidermanAudio.play();
+  } else{
+    spidermanAudio.pause();
+  }
+}
+
+function startMusic(){
+  if(music === "off"){
+    music= "on";
+  } else {
+    music = "off";
+  }
+  musicbutton();
+  playmusic();
+}
 
 
 welcome.addEventListener("click", startpage);
 startq.addEventListener('click', choice);
-var resetGame = document.getElementById('home-button');
-resetGame.addEventListener('click',startpage);
+document.getElementById('home-button').addEventListener('click', startpage);
 document.getElementById('answers').addEventListener('click', checkanswers);
+document.getElementById('music-button').addEventListener('click', startMusic);
