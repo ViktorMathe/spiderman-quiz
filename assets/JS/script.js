@@ -8,7 +8,10 @@ let scorenumbers = document.getElementById('scores');
 let scorepage = document.getElementById('score-page');
 let timer = document.getElementById('timer');
 let endresult = document.getElementById('end-result');
+let finalImage=document.getElementById('final-image');
+let lastMessage=document.getElementById('last-message');
 welcome.classList.remove('hide');
+
 
 let scores = 0;
 let questionsSet;
@@ -316,6 +319,18 @@ function endscore() {
   timer.style.display = 'none';
   scorepage.style.display = 'block';
   endresult.innerText = `Your result: ${scores}/5`;
+  if(scores<=2){
+    finalImage.src="assets/images/low-score.jpeg";
+    lastMessage.innerText="I think you can do this better!Press the Home button and start over!";
+  }
+  else if(scores >2 && scores <= 4){
+    finalImage.src="assets/images/mid-scores.jpg";
+    lastMessage.innerText="You know the important things. Press the Home button and try another category!";
+  }
+  else if(scores === 5){
+    finalImage.src="assets/images/high-score.webp";
+    lastMessage.innerText="Congratulations!You are a real fan!Press the Home button and test yourself in another category!"
+  }
 }
 
 function resetting() {
@@ -329,9 +344,10 @@ function resetting() {
 }
 
 function musicbutton() {
-  if (music === "on") {
+   
+   if(music === "on"){ 
     document.getElementById('music-button').innerHTML = `<i class="fas fa-music-slash"></i><br>Music off`;
-  } else {
+  } else{
     document.getElementById('music-button').innerHTML = `<i class="fas fa-music"></i><br>Music on`;
   }
 }
