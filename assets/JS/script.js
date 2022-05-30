@@ -321,7 +321,7 @@ function endscore() {
   endresult.innerText = `Your result: ${scores}/5`;
   if(scores<=2){
     finalImage.src="assets/images/low-score.jpeg";
-    lastMessage.innerText="I think you can do this better!Press the Home button and start over!";
+    lastMessage.innerText="I think you can do this better! Press the Home button and start over!";
   }
   else if(scores >2 && scores <= 4){
     finalImage.src="assets/images/mid-scores.jpg";
@@ -329,7 +329,7 @@ function endscore() {
   }
   else if(scores === 5){
     finalImage.src="assets/images/high-score.webp";
-    lastMessage.innerText="Congratulations!You are a real fan!Press the Home button and test yourself in another category!"
+    lastMessage.innerText="Congratulations!You are a real fan! Press the Home button and test yourself in another category!"
   }
 }
 

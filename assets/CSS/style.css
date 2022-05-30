@@ -138,3 +138,15 @@ h2 {
 .nav-buttons > button{
     margin: 20px;
 }
+
+#final-image{
+   width: 100%;
+}
+
+h3{
+    background-color: red;
+    color: #ffff;
+    text-align: center;
+    border-radius: 45%;
+    padding: 5%;
+}
