@@ -337,6 +337,7 @@ function musicbutton() {
 }
 
 spidermanAudio.loop = true;
+spidermanAudio.volume=0.2;
 
 function playmusic(){
   if(music==="on"){
@@ -349,8 +350,10 @@ function playmusic(){
 function startMusic(){
   if(music === "off"){
     music= "on";
+    console.log('Music started')
   } else {
     music = "off";
+    console.log('Music stopped')
   }
   musicbutton();
   playmusic();
