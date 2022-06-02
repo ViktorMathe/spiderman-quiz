@@ -314,6 +314,7 @@ function gameover() {
 function endscore() {
   console.log('Shows the results');
   main.classList.remove('hide');
+  startq.style.display='none';
   cat.style.display = "none";
   quiz.style.display = 'none';
   scorenumbers.style.display = 'none';
