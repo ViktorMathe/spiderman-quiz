@@ -151,6 +151,7 @@ h2 {
     color: red;
     padding: 15px;
     border-radius: 50%;
+    font-size: large;
 }
 
 .nav-buttons>button span{
@@ -200,4 +201,5 @@ h3 {
     .bttn{
         font-size:inherit;
     }
+
 }
