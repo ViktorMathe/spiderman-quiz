@@ -348,9 +348,9 @@ function resetting() {
 function musicbutton() {
    
    if(music === "on"){ 
-    musicbttn.innerHTML=`<i class="fas fa-volume-mute"></i><br>Music off`;
+    musicbttn.innerHTML=`<i class="fas fa-volume-mute"></i><br><span>Music off</span>`;
   } else{
-   musicbttn.innerHTML=`<i class="fas fa-volume-up"></i><br>Music on`;
+   musicbttn.innerHTML=`<i class="fas fa-volume-up"></i><br><span>Music on</span>`;
   }
 }
 

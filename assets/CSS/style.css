@@ -145,6 +145,16 @@ h2 {
 
 .nav-buttons>button {
     margin: 20px;
+    border: #303232;
+    border-width: 10px;
+    background-color: #ffff;
+    color: red;
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.nav-buttons>button span{
+    color: #447BBE;
 }
 
 #final-image {
@@ -180,6 +190,14 @@ h3 {
     }
 
     .box {
-        width: 100%;
+       height: 600px;
+    }
+
+    h2{
+        font-size: x-large;
+    }
+
+    .bttn{
+        font-size:inherit;
     }
 }
