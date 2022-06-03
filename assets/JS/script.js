@@ -1,3 +1,4 @@
+// Main Variables
 let body = document.getElementById('body');
 let main = document.getElementById('startpage');
 let startq = document.getElementById('startq')
@@ -13,15 +14,16 @@ let lastMessage=document.getElementById('last-message');
 let musicbttn=document.getElementById('music-button');
 welcome.classList.remove('hide');
 
-
+// Question and interactive variables
 let scores = 0;
 let questionsSet;
 let categoryChoosen;
 let currentQuestion;
 let counter;
 let music = "off";
-const spidermanAudio = new Audio('assets/Music/main-music.mp3');
+const spidermanAudio = new Audio('assets/music/main-music.mp3');
 
+// Display different pages on the site
 function startpage(event) {
   console.log('Start page')
   welcome.classList.add('hide');
@@ -55,7 +57,7 @@ function categories(category) {
 
   startquiz();
 }
-
+// The questions list
 let questions = [
   [{
       "question": "When was the first Spider-Man comic released?",
@@ -197,6 +199,7 @@ let questions = [
   ]
 ]
 
+// Start the quiz from beginning
 function startquiz(event) {
   console.log('Game started');
   choosecat();
@@ -207,6 +210,7 @@ function startquiz(event) {
   clearInterval(countdown);
 }
 
+// Questions and answer related functions
 function choosecat(event) {
   console.log("Category choosen");
   questionList = JSON.parse(JSON.stringify(questions));
@@ -281,7 +285,7 @@ function nextquestion() {
   }
 }
 
-
+// Timer and scores functions
 function starttimer() {
   timer.innerHTML = '60 seconds';
   seconds = 60;
@@ -326,7 +330,7 @@ function endscore() {
     lastMessage.innerHTML=`I think you can do this better! <br>Press the Home button and start over!`;
   }
   else if(scores >2 && scores <= 4){
-    finalImage.src="assets/images/mid-scores.jpg";
+    finalImage.src="assets/images/mid-scores.webp";
     lastMessage.innerHTML=`You know the important things. <br>Press the Home button and try another category!`;
   }
   else if(scores === 5){
@@ -334,7 +338,7 @@ function endscore() {
     lastMessage.innerHTML=`Congratulations!You are a real fan!<br> Press the Home button and test yourself in another category!`
   }
 }
-
+// Reset the whole quiz to beginning
 function resetting() {
   clearInterval(countdown);
   seconds = 60;
@@ -344,7 +348,7 @@ function resetting() {
   console.log(questions)
   scores = 0;
 }
-
+// Music related functions
 function musicbutton() {
    
    if(music === "on"){ 
@@ -377,7 +381,7 @@ function startMusic(){
   playmusic();
 }
 
-
+// The event listeners
 welcome.addEventListener("click", startpage);
 startq.addEventListener('click', choice);
 document.getElementById('home-button').addEventListener('click', startpage);
