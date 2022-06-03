@@ -12,8 +12,8 @@ let endresult = document.getElementById('end-result');
 let finalImage=document.getElementById('final-image');
 let lastMessage=document.getElementById('last-message');
 let musicbttn=document.getElementById('music-button');
+let foot=document.getElementById('footer');
 welcome.classList.remove('hide');
-
 // Question and interactive variables
 let scores = 0;
 let questionsSet;
@@ -29,6 +29,7 @@ function startpage(event) {
   welcome.classList.add('hide');
   body.classList.remove('welcome');
   main.classList.remove('hide');
+  foot.classList.remove('hide');
   startq.style.display = 'block';
   cat.style.display = 'none';
   quiz.style.display = 'none';

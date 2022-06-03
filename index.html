@@ -14,9 +14,10 @@
 <body id="body" class="welcome">
 
     <section id="starting" class="hide" >
-        <h1>Let's see what do you know about me</h1>
-        <hr>
-        <h1><span id="cont">Click to continue...</span></h1>
+        <h1>Let's see what do you know about me
+            <hr>
+        <span id="cont">Click to continue...</span>
+    </h1>
     </section>
 
     <section class="background hide" id="startpage">
@@ -48,9 +49,9 @@
                 <button data-answer="2" class="bttn answerbutton" id="answer2">Answer2</button>
                 <button data-answer="3" class="bttn answerbutton" id="answer3">Answer 3</button>
                 <button data-answer="4" class="bttn answerbutton" id="answer4">Answer 4</button>
+                <div id="scores"><span>Score:</span> 0/5</div>
+                <div id="timer"><span>Time left:</span> 60 <span>seconds</span></div>
             </div>
-            <div id="scores"><span>Score:</span> 0/5</div>
-            <div id="timer"><span>Time left:</span> 60 <span>seconds</span></div>
         </div>
 
         <div class="result-box" id="score-page">
@@ -61,7 +62,7 @@
             </div>
         </div>
     </section>
-    <footer></footer>
+    <footer id="footer" class="hide"></footer>
     <script src="./assets/JS/script.js"></script>
 </body>
 
