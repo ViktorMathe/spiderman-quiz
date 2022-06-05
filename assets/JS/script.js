@@ -1,7 +1,7 @@
 // Main Variables
 let body = document.getElementById('body');
 let main = document.getElementById('startpage');
-let startq = document.getElementById('startq')
+let startq = document.getElementById('startq');
 let cat = document.getElementById('cat');
 let quiz = document.getElementById('quiz');
 let welcome = document.getElementById('starting');
@@ -9,28 +9,32 @@ let scorenumbers = document.getElementById('scores');
 let scorepage = document.getElementById('score-page');
 let timer = document.getElementById('timer');
 let endresult = document.getElementById('end-result');
-let finalImage=document.getElementById('final-image');
-let lastMessage=document.getElementById('last-message');
-let musicbttn=document.getElementById('music-button');
-let foot=document.getElementById('footer');
+let finalImage = document.getElementById('final-image');
+let lastMessage = document.getElementById('last-message');
+let musicbttn = document.getElementById('music-button');
+let foot = document.getElementById('footer');
 
 // Question and interactive variables
 let scores = 0;
 let questionsSet;
+let questionList;
 let categoryChoosen;
 let currentQuestion;
+let questionAnswered = 0;
+let questionIndex;
 let counter;
+let seconds;
 let music = "off";
 const spidermanAudio = new Audio('assets/music/main-music.mp3');
 
 // Onload page
-window.onload= function () {
+window.onload = function () {
   welcome.classList.remove('hide');
   body.classList.remove('background');
-}
+};
 
 function startpage(event) {
-  console.log('Start page')
+  console.log('Start page');
   welcome.classList.add('hide');
   body.classList.remove('welcome');
   body.classList.add('background');
@@ -205,7 +209,7 @@ let questions = [
       "correctanswer": "Fortnite"
     }
   ]
-]
+];
 
 // Start the quiz from beginning
 function startquiz(event) {
@@ -278,7 +282,7 @@ function checkanswers(event) {
 
 function removeAnsweredQuestion() {
   let questionIndex = questionsSet.indexOf(currentQuestion);
-  questionsSet.splice(questionIndex, 1)
+  questionsSet.splice(questionIndex, 1);
 }
 
 function nextquestion() {
@@ -326,24 +330,22 @@ function gameover() {
 function endscore() {
   console.log('Shows the results');
   main.classList.remove('hide');
-  startq.style.display='none';
+  startq.style.display = 'none';
   cat.style.display = "none";
   quiz.style.display = 'none';
   scorenumbers.style.display = 'none';
   timer.style.display = 'none';
   scorepage.style.display = 'block';
   endresult.innerText = `Your result: ${scores}/5`;
-  if(scores<=2){
-    finalImage.src="assets/images/low-score.jpeg";
-    lastMessage.innerHTML=`I think you can do this better! <br>Press the Home button and start over!`;
-  }
-  else if(scores >2 && scores <= 4){
-    finalImage.src="assets/images/mid-scores.webp";
-    lastMessage.innerHTML=`You know the important things. <br>Press the Home button and try another category!`;
-  }
-  else if(scores === 5){
-    finalImage.src="assets/images/high-score.webp";
-    lastMessage.innerHTML=`Congratulations!You are a real fan!<br> Press the Home button and test yourself in another category!`
+  if (scores <= 2) {
+    finalImage.src = "assets/images/low-score.jpeg";
+    lastMessage.innerHTML = `I think you can do this better! <br>Press the Home button and start over!`;
+  } else if (scores > 2 && scores <= 4) {
+    finalImage.src = "assets/images/mid-scores.webp";
+    lastMessage.innerHTML = `You know the important things. <br>Press the Home button and try another category!`;
+  } else if (scores === 5) {
+    finalImage.src = "assets/images/high-score.webp";
+    lastMessage.innerHTML = `Congratulations!You are a real fan!<br> Press the Home button and test yourself in another category!`;
   }
 }
 // Reset the whole quiz to beginning
@@ -353,37 +355,37 @@ function resetting() {
   scorenumbers.innerHTML = `Score: 0/5`;
   questionAnswered = 0;
   questionIndex = 0;
-  console.log(questions)
+  console.log(questions);
   scores = 0;
 }
 // Music related functions
 function musicbutton() {
-   
-   if(music === "on"){ 
-    musicbttn.innerHTML=`<i class="fas fa-volume-mute"></i><br><span>Music off</span>`;
-  } else{
-   musicbttn.innerHTML=`<i class="fas fa-volume-up"></i><br><span>Music on</span>`;
+
+  if (music === "on") {
+    musicbttn.innerHTML = `<i class="fas fa-volume-mute"></i><br><span>Music off</span>`;
+  } else {
+    musicbttn.innerHTML = `<i class="fas fa-volume-up"></i><br><span>Music on</span>`;
   }
 }
 
 spidermanAudio.loop = true;
-spidermanAudio.volume=0.2;
+spidermanAudio.volume = 0.2;
 
-function playmusic(){
-  if(music==="on"){
+function playmusic() {
+  if (music === "on") {
     spidermanAudio.play();
-  } else{
+  } else {
     spidermanAudio.pause();
   }
 }
 
-function startMusic(){
-  if(music === "off"){
-    music= "on";
-    console.log('Music started')
+function startMusic() {
+  if (music === "off") {
+    music = "on";
+    console.log('Music started');
   } else {
     music = "off";
-    console.log('Music stopped')
+    console.log('Music stopped');
   }
   musicbutton();
   playmusic();
