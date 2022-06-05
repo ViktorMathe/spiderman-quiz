@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
 @font-face {
     font-family: spidey;
     src: url(../Font-style/homoarakhn.regular.ttf)
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
 body,
 html {
     height: 100%;
