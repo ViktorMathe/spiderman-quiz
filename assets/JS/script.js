@@ -347,7 +347,7 @@ function endscore() {
 }
 // Reset the whole quiz to beginning
 function resetting() {
-  clearInterval(countdown);
+  clearInterval(counter);
   seconds = 60;
   scorenumbers.innerHTML = `Score: 0/5`;
   questionAnswered = 0;
