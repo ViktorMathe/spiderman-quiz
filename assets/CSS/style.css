@@ -46,6 +46,7 @@ hr {
 
 .background {
     background: url(../images/Spiderman.Wallpaper.Op05.jpg)no-repeat, center;
+    background-attachment: fixed;
     background-size: cover;
 }
 
@@ -224,6 +225,7 @@ footer i {
     .background {
         background: url(../images/spiderman-mobile-op6.webp) no-repeat, center;
         background-size: cover;
+        background-attachment: fixed;
     }
     .box {
         height: 70%;
