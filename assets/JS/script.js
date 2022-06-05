@@ -42,6 +42,7 @@ function startpage(event) {
   scorepage.style.display = 'none';
   scorenumbers.style.display = 'none';
   timer.style.display = 'none';
+  resetting();
 }
 
 function choice(event) {
