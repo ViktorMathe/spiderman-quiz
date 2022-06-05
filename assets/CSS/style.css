@@ -3,11 +3,13 @@
     src: url(../Font-style/homoarakhn.regular.ttf)
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
 body,
 html {
     height: 100%;
     display: grid;
     margin: 0;
+    font-family: 'Comic Neue', cursive;
 }
 
 /* Welcome page */
@@ -88,7 +90,6 @@ h2 {
     text-align: center;
     padding: 1%;
     width: 100%;
-
 }
 
 .bttn {
@@ -109,7 +110,7 @@ h2 {
     color: #ffff;
     font-weight: 300;
     font-size: large;
-
+    font-family: 'Comic Neue', cursive;
 }
 
 #scores,
@@ -197,6 +198,7 @@ footer p {
     float: left;
     width: 5%;
     font-size: small;
+    font-family: spidey;
 }
 
 @media screen and (max-width: 1280px) {
