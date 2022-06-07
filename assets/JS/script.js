@@ -14,6 +14,13 @@ let lastMessage = document.getElementById('last-message');
 let musicbttn = document.getElementById('music-button');
 let foot = document.getElementById('footer');
 
+// The event listeners
+welcome.addEventListener("click", startpage);
+startq.addEventListener('click', choice);
+document.getElementById('home-button').addEventListener('click', startpage);
+document.getElementById('answers').addEventListener('click', checkanswers);
+document.getElementById('music-button').addEventListener('click', startMusic);
+
 // Question and interactive variables
 let scores = 0;
 let questionsSet;
@@ -34,7 +41,6 @@ window.onload = function () {
 };
 
 function startpage(event) {
-  console.log('Start page');
   welcome.classList.add('hide');
   body.classList.remove('welcome');
   body.classList.add('background');
@@ -50,7 +56,6 @@ function startpage(event) {
 }
 
 function choice(event) {
-  console.log('Category choices');
   main.classList.remove('hide');
   startq.style.display = 'none';
   scorepage.style.display = 'none';
@@ -213,7 +218,6 @@ let questions = [
 
 // Start the quiz from beginning
 function startquiz(event) {
-  console.log('Game started');
   choosecat();
   resetting();
   randomquestions();
@@ -224,7 +228,6 @@ function startquiz(event) {
 
 // Questions and answer related functions
 function choosecat(event) {
-  console.log("Category choosen");
   questionList = JSON.parse(JSON.stringify(questions));
   switch (categoryChoosen) {
 
@@ -268,13 +271,10 @@ function showquestions() {
 }
 
 function checkanswers(event) {
-  console.log(event);
   if (event.target.innerHTML === currentQuestion.correctanswer) {
     console.log('Correct Answer');
     scores++;
     scorepush();
-  } else {
-    console.log('Wrong Answer');
   }
   removeAnsweredQuestion();
   nextquestion();
@@ -286,7 +286,6 @@ function removeAnsweredQuestion() {
 }
 
 function nextquestion() {
-  console.log('Next question');
   if (questionAnswered < questionsSet.length) {
     randomquestions();
     showquestions();
@@ -322,13 +321,11 @@ function scorepush() {
 }
 
 function gameover() {
-  console.log('Finished the game');
   clearInterval(counter);
   endscore();
 }
 
 function endscore() {
-  console.log('Shows the results');
   main.classList.remove('hide');
   startq.style.display = 'none';
   cat.style.display = "none";
@@ -355,7 +352,6 @@ function resetting() {
   scorenumbers.innerHTML = `Score: 0/5`;
   questionAnswered = 0;
   questionIndex = 0;
-  console.log(questions);
   scores = 0;
 }
 // Music related functions
@@ -382,18 +378,9 @@ function playmusic() {
 function startMusic() {
   if (music === "off") {
     music = "on";
-    console.log('Music started');
   } else {
     music = "off";
-    console.log('Music stopped');
   }
   musicbutton();
   playmusic();
 }
-
-// The event listeners
-welcome.addEventListener("click", startpage);
-startq.addEventListener('click', choice);
-document.getElementById('home-button').addEventListener('click', startpage);
-document.getElementById('answers').addEventListener('click', checkanswers);
-document.getElementById('music-button').addEventListener('click', startMusic);
