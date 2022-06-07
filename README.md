@@ -8,7 +8,7 @@ On this website you can find an interactive quiz game with Spider-Man related qu
 
 ## _**Contents**_
 
-* [User experience](#user-experience)
+* [Features](#features)
     * [Future ideas](#future-ideas)
 
 * [Design](#design)
@@ -17,21 +17,21 @@ On this website you can find an interactive quiz game with Spider-Man related qu
     * [Images](#images)
     * [Audio](#audio)
 
-* [Deployment](#deployment)
-
 * [Testing](#testing)
-    * [W3C Validator](#html-validator)
+    * [W3C Validator](#w3c-validator)
     * [CSS Validator](#css-validator)
-    * [JSHint](#javascript)
+    * [JSHint](#jshint)
     * [Lighthouse](#lighthouse)
     * [Full testing](#full-testing)
     * [Solved bugs](#solved-bugs)
     * [Known bugs](#known-bugs)
 
+* [Deployment](#deployment)
+
 * [Credits](#credits)
     
 
-## _**User experience**_
+## _**Features**_
 
 My idea was to create a quiz game to all the generation who like the superheros comic books,films or videogames.There are 5 questions in each category and there is a timer as well which gives you 60 seconds to answer the questions and you can find a score number as well which is counting how many correct answers did you have.
 
@@ -59,28 +59,13 @@ My idea was to create a quiz game to all the generation who like the superheros 
     * I choose these colours because these are Spider-Man's main color scheme.
 
   * ### _Font:_
-    * I download a Spider-Man themed font from the [1001 Fonts website](https://www.1001fonts.com/homoarakhn-font.html), which is free to use for everybody and applyed it on the welcome page and the copyright information on the footer.
-
-    * The rest of the page is using a Comic Neue font from the [Google Fonts](https://fonts.google.com/specimen/Comic+Neue?preview.text=Questions&preview.text_type=custom&query=comic).
+    * I used an original Spider-Man font for the heading on the welcome page and on the footer because I think it is the most relevant to the website's theme. The questions and the answers using a Comic font which is relavant since Spider-Man first released in a comic book.
 
   * ### _Images:_
-    * I found the images from the web ([Google](https://www.google.com/search?q=spiderman+images&newwindow=1&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjCi4nCoJf4AhWTXsAKHR_LAaUQ_AUoAXoECAEQAw&biw=1920&bih=945&dpr=1)), and one image been downloaded from the [Unsplash website](https://unsplash.com/s/photos/spiderman)
+    * I used images about Spider-Man to feel more likely he is the main attraction on the site.
 
   * ### _Audio:_
-    * I found the theme song on the [YouTube](https://www.youtube.com/watch?v=j8deCNfNjO4&list=LL&index=2) which has no copyright on it and I could download it from the following [link](https://drive.google.com/file/d/1nwQRvlF6HnAgeZIeMmzKsoG1iGTKsz80/view).
-
-## _**Deployment**_
-
-This site was deployed to GitHub Pages by following these steps:
-1. Login or Sign Up to [GitHub](www.github.com).
-2. Create a new repository named "spiderman-quiz".
-3. Once created, click on "Settings" on the navigation bar under the repository title.
-4. Scroll down to "GitHub Pages".
-5. Under "Source", choose which branch to deploy. I chose "master", but this is sometimes shown as "main".
-6. Choose which folder to deploy from, usually "/root".
-7. Click "Save", then wait for it to be deployed. It can take some time for the page to be fully deployed.
-8. Your URL will be displayed above "Source".
-9. [Live website](https://viktormathe.github.io/spiderman-quiz/)
+    * I added the Spider-Man theme song which the user can switch on or off while doing to quiz because this is the most relevant song to this site.
 
 ## _**Testing**_
 
@@ -122,7 +107,29 @@ s ![iPad welcome](./assets/images/readme-images/ipad-welcome.jpg) ![iPad questio
 
     1. I just found one bug what I know which is shows in the JSHint report. The categories is an unused variable, which is really not but the categories function using an 'onclick' method instead of the event listener and the JSHint can not read other files that is why I have this trouble. I will make sure it is change to the event listener in the future.
 
+## _**Deployment**_
+
+This site was deployed to GitHub Pages by following these steps:
+1. Login or Sign Up to [GitHub](www.github.com).
+2. Create a new repository named "spiderman-quiz".
+3. Once created, click on "Settings" on the navigation bar under the repository title.
+4. Scroll down to "GitHub Pages".
+5. Under "Source", choose which branch to deploy. I chose "master", but this is sometimes shown as "main".
+6. Choose which folder to deploy from, usually "/root".
+7. Click "Save", then wait for it to be deployed. It can take some time for the page to be fully deployed.
+8. Your URL will be displayed above "Source".
+9. [Live website](https://viktormathe.github.io/spiderman-quiz/)
+
+
 
 * ## _**Credits**_
 
-    * 
+    *  I download a Spider-Man themed font from the [1001 Fonts website](https://www.1001fonts.com/homoarakhn-font.html), which is free to use for everybody and applyed it on the welcome page and the copyright information on the footer.
+
+    * The rest of the page is using a Comic Neue font from the [Google Fonts](https://fonts.google.com/specimen/Comic+Neue?preview.text=Questions&preview.text_type=custom&query=comic).
+
+    * Source to the images: 
+                  [Welcome image](https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/942d6891-f116-4a84-9c4e-cd6f2e736369/dcpnqvz-2d29d21a-4cbf-4e9e-8214-24183b45cd15.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzk0MmQ2ODkxLWYxMTYtNGE4NC05YzRlLWNkNmYyZTczNjM2OVwvZGNwbnF2ei0yZDI5ZDIxYS00Y2JmLTRlOWUtODIxNC0yNDE4M2I0NWNkMTUucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.uBlCPfGnjbFg5LKbg3auyL3NnGNc01obaH6XPJLddGI) , 
+                  [Mobile welcome image](https://unsplash.com/photos/PXjQaGxi4JA) , [Main background](https://my4kwallpapers.com/wp-content/uploads/2020/09/Spiderman-4k-Wallpaper.jpg) , [Mobile background](https://1.bp.blogspot.com/-Bj2PS8yDKfM/YCn0zy8-AFI/AAAAAAAADOI/r7yy_WLMlh0XSvmV84dxj2FxRLYSUIUJQCLcBGAsYHQ/s600-rw/spiderman-back-logo-peter-parker-heroscreen.cc-hd-mobile-8.1933.jpg) , [Low score](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk7K4DgqTRZRqY7biRhJQJkUqpkKu4ygquHw&usqp=CAU) , [Mid score](https://cdn.vox-cdn.com/thumbor/SLhFTTOcnZnb-PPIiJumu0WDY4Y=/85x0:1014x619/1200x800/filters:focal(85x0:1014x619)/cdn.vox-cdn.com/uploads/chorus_image/image/45660688/spiderman-marvel.0.0.jpg) , [High score](https://images.thedirect.com/media/article_big/Spider-man-logos.jpg?imgeng=cmpr_75/)
+
+    * I found the theme song on the [YouTube](https://www.youtube.com/watch?v=j8deCNfNjO4&list=LL&index=2) which has no copyright on it and I could download it from the following [link](https://drive.google.com/file/d/1nwQRvlF6HnAgeZIeMmzKsoG1iGTKsz80/view).
