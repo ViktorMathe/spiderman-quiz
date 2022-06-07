@@ -29,8 +29,7 @@ On this website you can find an interactive quiz game with Spider-Man related qu
     * [Known bugs](#known-bugs)
 
 * [Credits](#credits)
-    * [Content](#content)
-    * [Media](#media)
+    
 
 ## _**User experience**_
 
@@ -123,3 +122,7 @@ s ![iPad welcome](./assets/images/readme-images/ipad-welcome.jpg) ![iPad questio
 
     1. I just found one bug what I know which is shows in the JSHint report. The categories is an unused variable, which is really not but the categories function using an 'onclick' method instead of the event listener and the JSHint can not read other files that is why I have this trouble. I will make sure it is change to the event listener in the future.
 
+
+* ## _**Credits**_
+
+    * 
